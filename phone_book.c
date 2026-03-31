@@ -1,187 +1,70 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    char n[50];
-    int a;
-    int p;
-    int d;
-    char add[50];
+#define C_RESET "\x1b[0m"
+#define C_CYAN "\x1b[36m"
+#define C_GREEN "\x1b[32m"
+#define C_RED "\x1b[31m"
 
-    char na[50];
-    int ag;
-    int ph;
-    int da;
-    char addr[50];
+typedef struct
+{
+    char name[50];
+    int age;
+    long long phone;
+    char dob[20];
+    char address[80];
+} Contact;
 
-    printf("WELCOME TO PHONE BOOK\n\n");
+static void print_contact(const Contact *c, int idx)
+{
+    printf(C_GREEN "\nContact #%d\n" C_RESET, idx + 1);
+    printf("Name    : %s\n", c->name);
+    printf("Age     : %d\n", c->age);
+    printf("Phone   : %lld\n", c->phone);
+    printf("DOB     : %s\n", c->dob);
+    printf("Address : %s\n", c->address);
+}
 
-    printf("MENU\n");
+int main(void)
+{
+    Contact contacts[2];
+    int count = 0;
+    int i;
 
-    printf("Press 1 to add the contact\n\n");
+    printf(C_CYAN "========================================================\n" C_RESET);
+    printf(C_CYAN "                   AESTHETIC PHONE BOOK\n" C_RESET);
+    printf(C_CYAN "========================================================\n" C_RESET);
 
-    int x;
-    printf("Enter: ");
-    scanf("%d",&x);
+    printf("How many contacts to add (1-2): ");
+    scanf("%d", &count);
 
-    if(x==1)
+    if (count < 1 || count > 2)
     {
-        int y;
-        printf(" Enter the number of contact to be added: ");
-        scanf("%d",&y);
-
-        if(y==1)
-        {
-            printf("--------------------\n");
-            printf("Name:");
-            scanf("%s",&n);
-
-            printf("Age: ");
-            scanf("%d",&a);
-
-            printf("Phone Number:");
-            scanf("%d",&p);
-
-            printf("Date of Birth: ");
-            scanf("%d",&d);
-
-            printf("Address: ");
-            scanf("%s",&add);
-            printf("---------------------\n");
-
-        }
-        else if(y==2)
-        {
-            printf("--------------------\n");
-            printf("Name:");
-            scanf("%s",&n);
-
-            printf("Age: ");
-            scanf("%d",&a);
-
-            printf("Phone Number:");
-            scanf("%d",&p);
-
-            printf("Date of Birth: ");
-            scanf("%d",&d);
-
-            printf("Address: ");
-            scanf("%s",&add);
-            printf("---------------------\n");
- //---------------------------------------------------------
-            printf("--------------------\n");
-            printf("Name:");
-            scanf("%s",&na);
-
-            printf("Age: ");
-            scanf("%d",&ag);
-
-            printf("Phone Number:");
-            scanf("%d",&ph);
-
-            printf("Date of Birth: ");
-            scanf("%d",&da);
-
-            printf("Address: ");
-            scanf("%s",&addr);
-            printf("---------------------\n");
-
-        }
-
-        printf("Press 2 to see the entered contact \n");
-        printf("Press 3 to exit the phone book\n");
-
-        int z;
-        printf("Enter\n");
-        scanf("%d",&z);
-
-        if(z==2)
-        {
-            int num;
-            printf("Enter the number contact to be viewed:");
-            scanf("%d",&num);
-
-            if(num==1)
-            {
-                printf("--------------------\n");
-                printf("Name:");
-                printf("%s",n);
-    
-                printf("Age: ");
-                printf("%d",a);
-    
-                printf("Phone Number:");
-                printf("%d",p);
-    
-                printf("Date of Birth: ");
-                printf("%d",d);
-    
-                printf("Address: ");
-                printf("%s",add);
-                printf("---------------------\n");
-    
-            }
-            else if(num==2)
-            {
-                printf("--------------------\n");
-                printf("Name:");
-                printf("%s",n);
-    
-                printf("Age: ");
-                printf("%d",a);
-    
-                printf("Phone Number:");
-                printf("%d",p);
-    
-                printf("Date of Birth: ");
-                printf("%d",d);
-    
-                printf("Address: ");
-                printf("%s",add);
-                printf("---------------------\n");
-//---------------------------------------------------------
-                printf("--------------------\n");
-                printf("Name:");
-                printf("%s",na);
-    
-                printf("Age: ");
-                printf("%d",ag);
-    
-                printf("Phone Number:");
-                printf("%d",ph);
-    
-                printf("Date of Birth: ");
-                printf("%d",da);
-    
-                printf("Address: ");
-                printf("%s",addr);
-                printf("---------------------\n");
-            }
-        }
-        else if(z==3)
-        {
-            printf("Are you sure you want to close the phone book\n");
-            printf("Press 1 for yess\n");
-            printf("Press 2 for noo\n");
-
-            int ans;
-            printf("Enter\n");
-            scanf("%d",&ans);
-
-            if(ans==1)
-            {
-                printf("The phone book has closed\n");
-                printf("Have a good day\n");
-            }
-            else if(ans==2)
-            {
-                printf("The phone book has not closed\n");
-                printf("You can continue\n");
-            }
-        }
+        printf(C_RED "Only 1 or 2 contacts are supported in this mini project.\n" C_RESET);
+        return 0;
     }
-    else
+
+    for (i = 0; i < count; i++)
     {
-        printf("In-Valid");
+        printf("\nEnter details for contact %d\n", i + 1);
+        printf("Name (use underscore for spaces): ");
+        scanf("%49s", contacts[i].name);
+        printf("Age: ");
+        scanf("%d", &contacts[i].age);
+        printf("Phone number: ");
+        scanf("%lld", &contacts[i].phone);
+        printf("Date of birth (DD-MM-YYYY): ");
+        scanf("%19s", contacts[i].dob);
+        printf("Address (use underscore for spaces): ");
+        scanf("%79s", contacts[i].address);
     }
+
+    printf(C_CYAN "\n=================== SAVED CONTACTS ===================\n" C_RESET);
+    for (i = 0; i < count; i++)
+    {
+        print_contact(&contacts[i], i);
+    }
+
+    printf(C_CYAN "\n======================================================\n" C_RESET);
+    printf("Phone book session ended.\n");
     return 0;
 }
