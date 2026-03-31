@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Periodic Table Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-periodic" data-page="periodic">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>Periodic UI</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a
+          ><a href="phone_book.html">Next: Phone Book</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from mod_periodic_table.c</span>
+          <h1>Atomic Explorer</h1>
+          <p>
+            Find element details by atomic number with a clean science-inspired
+            layout.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>Quick Try</h2>
+          <p>Use atomic numbers 1, 2, or 6 in this mini demo.</p>
+        </aside>
+      </section>
+
+      <section class="two-col">
+        <article class="panel reveal">
+          <h2>Search by Atomic Number</h2>
+          <div class="form-grid">
+            <label for="atomicNumber">Atomic Number</label>
+            <input
+              id="atomicNumber"
+              type="number"
+              min="1"
+              placeholder="e.g. 1"
+            />
+            <button id="periodicRun" type="button">Get Element Info</button>
+          </div>
+        </article>
+        <article class="panel reveal">
+          <h2>Element Card</h2>
+          <div id="periodicResult" class="result-box">
+            Element details will appear here.
+          </div>
+        </article>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

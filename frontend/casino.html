@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Casino Game Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-casino" data-page="casino">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>Casino UI</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="guess_game.html">Next: Guess</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from casino.c</span>
+          <h1>Bet. Guess. Win Big.</h1>
+          <p>
+            Color-rich casino board with the same 1 to 10 guessing structure and
+            payout style.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>Payout Rule</h2>
+          <p>
+            Correct guess wins 10x bet, wrong guess deducts bet from deposit.
+          </p>
+        </aside>
+      </section>
+
+      <section class="two-col">
+        <article class="panel reveal">
+          <h2>Game Inputs</h2>
+          <div class="form-grid">
+            <label for="casinoDeposit">Deposit Amount</label>
+            <input
+              id="casinoDeposit"
+              type="number"
+              min="1"
+              placeholder="e.g. 1000"
+            />
+            <label for="casinoBet">Bet Amount</label>
+            <input
+              id="casinoBet"
+              type="number"
+              min="1"
+              placeholder="e.g. 200"
+            />
+            <label for="casinoGuess">Guess (1-10)</label>
+            <input
+              id="casinoGuess"
+              type="number"
+              min="1"
+              max="10"
+              placeholder="Lucky number"
+            />
+            <button id="casinoPlay" type="button">Spin and Reveal</button>
+          </div>
+        </article>
+        <article class="panel reveal">
+          <h2>Round Result</h2>
+          <div id="casinoResult" class="result-box">
+            Your round result will appear here.
+          </div>
+        </article>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

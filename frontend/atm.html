@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-atm" data-page="atm">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>ATM Flow</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="billing.html">Next: Billing</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from atm.c</span>
+          <h1>Secure Withdrawal Experience</h1>
+          <p>
+            Simulates card-based access, PIN validation, balance check, and
+            withdrawal output.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>Quick Notes</h2>
+          <p>
+            Cards: k, s, i mapped to the same users and balances from your C
+            code.
+          </p>
+        </aside>
+      </section>
+
+      <section class="two-col">
+        <article class="panel reveal">
+          <h2>Run ATM Action</h2>
+          <div class="form-grid">
+            <label for="atmCard">Card Owner</label>
+            <select id="atmCard">
+              <option value="k">k - Ken Keneki</option>
+              <option value="s">s - Sasuke Uchiha</option>
+              <option value="i">i - Itachi Uchiha</option>
+            </select>
+
+            <label for="atmPin">4 Digit PIN</label>
+            <input id="atmPin" type="password" placeholder="e.g. 1234" />
+
+            <label for="atmAction">Action</label>
+            <select id="atmAction">
+              <option value="withdraw">Withdraw</option>
+              <option value="balance">Check Balance</option>
+            </select>
+
+            <label for="atmAmount">Withdrawal Amount</label>
+            <input
+              id="atmAmount"
+              type="number"
+              min="1"
+              placeholder="Rs amount"
+            />
+
+            <button id="atmRun" type="button">Process Transaction</button>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <h2>Transaction Output</h2>
+          <div id="atmResult" class="result-box">Awaiting action...</div>
+        </article>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

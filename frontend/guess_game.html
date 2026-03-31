@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess Game Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-guess" data-page="guess">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>Guess UI</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a
+          ><a href="lib_manage.html">Next: Library</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from guess_game.c</span>
+          <h1>Minimal Guess Challenge</h1>
+          <p>
+            Three-attempt logic is preserved. Secret number remains 5 just like
+            the C version.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>How to Play</h2>
+          <p>
+            Enter one number per attempt and track remaining tries in real time.
+          </p>
+        </aside>
+      </section>
+
+      <section class="two-col">
+        <article class="panel reveal">
+          <h2>Try Your Guess</h2>
+          <div class="form-grid">
+            <label for="guessInput">Enter a number</label>
+            <input id="guessInput" type="number" placeholder="1 to 10" />
+            <button id="guessRun" type="button">Submit Guess</button>
+          </div>
+        </article>
+        <article class="panel reveal">
+          <h2>Status</h2>
+          <div id="guessResult" class="result-box">You have 3 attempts.</div>
+        </article>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-library" data-page="library">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>Library UI</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a
+          ><a href="mod_periodic_table.html">Next: Periodic</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from lib_manage.c</span>
+          <h1>Library Selection Console, Reimagined</h1>
+          <p>
+            Category-first browsing with quick status feedback for selected
+            books.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>Categories</h2>
+          <p>
+            Computer, Electronics, and Mechanical streams inspired by your menu
+            structure.
+          </p>
+        </aside>
+      </section>
+
+      <section class="two-col">
+        <article class="panel reveal">
+          <h2>Search Book Status</h2>
+          <div class="form-grid">
+            <label for="libCategory">Category</label>
+            <select id="libCategory">
+              <option>Computer</option>
+              <option>Electronics</option>
+              <option>Mechanical</option>
+            </select>
+            <label for="libBook">Book</label>
+            <select id="libBook">
+              <option>Introduction to C</option>
+              <option>Introduction to Python</option>
+              <option>Introduction to R Programming</option>
+              <option>Practical Electronics for Inventors</option>
+              <option>Fundamentals of Thermodynamics</option>
+            </select>
+            <button id="libraryRun" type="button">Check Availability</button>
+          </div>
+        </article>
+        <article class="panel reveal">
+          <h2>Library Output</h2>
+          <div id="libraryResult" class="result-box">
+            Pick category and book to get status.
+          </div>
+        </article>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

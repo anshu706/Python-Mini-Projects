@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing System Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-billing" data-page="billing">
+    <div class="container">
+      <nav class="navbar reveal">
+        <a class="brand" href="index.html"
+          ><span class="logo-dot"></span><strong>Billing UI</strong></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="casino.html">Next: Casino</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <article class="panel reveal">
+          <span class="badge">Mapped from billing.c</span>
+          <h1>Smart Market Billing Dashboard</h1>
+          <p>
+            Enter quantities and instantly compute total cost based on your C
+            pricing table.
+          </p>
+        </article>
+        <aside class="panel reveal">
+          <h2>Pricing Engine</h2>
+          <p>
+            Cosmetics, grocery, and beverages are grouped like the original
+            console bill.
+          </p>
+        </aside>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Item Quantities</h2>
+        <div class="grid cards">
+          <div class="card">
+            <h3>Cosmetics</h3>
+            <input
+              id="body_soap"
+              type="number"
+              min="0"
+              placeholder="Body Soap"
+            /><input
+              id="hair_cream"
+              type="number"
+              min="0"
+              placeholder="Hair Cream"
+            /><input
+              id="body_spray"
+              type="number"
+              min="0"
+              placeholder="Body Spray"
+            /><input
+              id="hair_spray"
+              type="number"
+              min="0"
+              placeholder="Hair Spray"
+            />
+          </div>
+          <div class="card">
+            <h3>Grocery</h3>
+            <input id="sugar" type="number" min="0" placeholder="Sugar" /><input
+              id="tea"
+              type="number"
+              min="0"
+              placeholder="Tea"
+            /><input
+              id="coffee"
+              type="number"
+              min="0"
+              placeholder="Coffee"
+            /><input id="rice" type="number" min="0" placeholder="Rice" /><input
+              id="wheat"
+              type="number"
+              min="0"
+              placeholder="Wheat"
+            />
+          </div>
+          <div class="card">
+            <h3>Beverages</h3>
+            <input id="pepsi" type="number" min="0" placeholder="Pepsi" /><input
+              id="sprite"
+              type="number"
+              min="0"
+              placeholder="Sprite"
+            /><input id="coke" type="number" min="0" placeholder="Coke" /><input
+              id="mojitos"
+              type="number"
+              min="0"
+              placeholder="Mojitos"
+            /><input
+              id="thumbs_up"
+              type="number"
+              min="0"
+              placeholder="Thumbs Up"
+            />
+          </div>
+          <div class="card">
+            <h3>Action</h3>
+            <p>Compute a clean estimate quickly.</p>
+            <button id="billRun" type="button">Calculate Total</button>
+            <div id="billResult" class="result-box">
+              Estimated total appears here.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
