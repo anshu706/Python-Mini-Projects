@@ -633,7 +633,8 @@ class PeriodicTableApp:
         left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 10))
 
         # Control panel
-        control_frame = tk.Frame(left_frame, bg=self.PANEL_COLOR, relief=tk.FLAT)
+        control_frame = tk.Frame(
+            left_frame, bg=self.PANEL_COLOR, relief=tk.FLAT)
         control_frame.pack(fill=tk.X, pady=(0, 10), padx=5, ipady=10)
 
         ctrl_label = tk.Label(
@@ -720,7 +721,8 @@ class PeriodicTableApp:
             highlightbackground=self.SECONDARY_COLOR,
             relief=tk.FLAT,
         )
-        scrollbar = tk.Scrollbar(canvas_frame, orient=tk.VERTICAL, command=canvas.yview)
+        scrollbar = tk.Scrollbar(
+            canvas_frame, orient=tk.VERTICAL, command=canvas.yview)
         canvas.configure(yscrollcommand=scrollbar.set)
 
         canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
